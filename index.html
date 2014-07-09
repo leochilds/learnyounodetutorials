@@ -1,20 +1,87 @@
 ---
-layout: default
+layout: none
 ---
 
-<div class="home">
+<html>
+	<head>
+		<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="{{ site.description }}" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="{{"/js/html5shiv.js" | prepend: site.baseurl }}"></script><![endif]-->
+		<script src="{{"/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+		<script src="{{"/js/jquery.dropotron.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{"/js/skel.min.js" | prepend: site.baseurl }}">
+    {
+      prefix: "{{"/css/style" | prepend: site.baseurl }}",
+      breakpoints: {
+					'widest':	{ range: '1680-', hasStyleSheet: false, containers: 1400 },
+					'wide':		{ range: '-1680', containers: 1200 },
+					'normal':	{ range: '-1280', containers: 'fluid', grid: { gutters: 36 }, viewportWidth: 1140 },
+					'narrow':	{ range: '-960', containers: 'fluid', grid: { gutters: 32 } },
+					'narrower': 	{ range: '-840', containers: 'fluid', grid: { gutters: 32, collapse: true } },
+					'mobile':	{ range: '-640', containers: 'fluid', grid: { gutters: 32, collapse: true }, lockViewport: true }
+      }
+    }
+  </script>
+		<script src="{{"/js/skel-panels.min.js" | prepend: site.baseurl }}"></script>
+		<script src="{{"/js/init.js" | prepend: site.baseurl }}"></script>
+		<noscript>
+			<link rel="stylesheet" href="{{"/css/skel-noscript.css" | prepend: site.baseurl }}"/>
+			<link rel="stylesheet" href="{{"/css/style.css" | prepend: site.baseurl }}"/>
+			<link rel="stylesheet" href="{{"/css/style-desktop.css" | prepend: site.baseurl }}"/>
+			<link rel="stylesheet" href="{{"/css/style-noscript.css" | prepend: site.baseurl }}"/>
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{"/css/ie8.css" | prepend: site.baseurl }}"/><![endif]-->
+  
+  <!-- Jekyll CSS -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+	</head>
+	<body class="no-sidebar">
 
-  <h1>Posts</h1>
+		<!-- Header -->
+			<div id="header">
 
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="#" id="logo">Digital Alchemy</a></h1>
+              <h1>Tutorials</h1>
+						</header>
+					</div>
+				
+				
+						<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="http://blog.dacamden.co.uk" >Home</a></li>
+							<li><a href="http://blog.dacamden.co.uk/about">About</a></li>
+							<li><a href="http://blog.dacamden.co.uk/jekyll/update/2014/06/15/Welcome">Blog</a></li>
+              <li><a href="http://tutorials.dacamden.co.uk">Tutorials</a></li>
+                            </ul>
+					</nav>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+			</div>
+			<!-- Carousel -->
+			<div class="carousel">
+				<div class="reel">
+{% for post in site.posts %}
+					<article>
+						<a href="{{ post.url | prepend: site.baseurl }}" class="image featured"><img src="{{ post.imageurl }}" style="max-height:300px;" alt="" /></a>
+						<header>
+							<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+						</header>
+						<h4>{{ post.date | date: "%b %-d, %Y" }}</h4>
+            <p>{{ post.content |truncatehtml | truncatewords: 20 }}</p>
+					</article>
+				 {% endfor %}
+					
+				</div>
+			</div>
+		
+							
+                </div>
+            </div>
 
-</div>
+			</div>
