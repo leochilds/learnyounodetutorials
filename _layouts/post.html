@@ -1,0 +1,122 @@
+---
+layout: none
+---
+<html>
+	<head>
+		<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="{{ site.description }}" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="{{"/js/html5shiv.js" | prepend: site.baseurl }}"></script><![endif]-->
+		<script src="{{"/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+		<script src="{{"/js/jquery.dropotron.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{"/js/skel.min.js" | prepend: site.baseurl }}">
+    {
+      prefix: "{{"/css/style" | prepend: site.baseurl }}",
+      breakpoints: {
+					'widest':	{ range: '1680-', hasStyleSheet: false, containers: 1400 },
+					'wide':		{ range: '-1680', containers: 1200 },
+					'normal':	{ range: '-1280', containers: 'fluid', grid: { gutters: 36 }, viewportWidth: 1140 },
+					'narrow':	{ range: '-960', containers: 'fluid', grid: { gutters: 32 } },
+					'narrower': 	{ range: '-840', containers: 'fluid', grid: { gutters: 32, collapse: true } },
+					'mobile':	{ range: '-640', containers: 'fluid', grid: { gutters: 32, collapse: true }, lockViewport: true }
+      }
+    }
+  </script>
+		<script src="{{"/js/skel-panels.min.js" | prepend: site.baseurl }}"></script>
+		<script src="{{"/js/init.js" | prepend: site.baseurl }}"></script>
+		<noscript>
+			<link rel="stylesheet" href="{{"/css/skel-noscript.css" | prepend: site.baseurl }}"/>
+			<link rel="stylesheet" href="{{"/css/style.css" | prepend: site.baseurl }}"/>
+			<link rel="stylesheet" href="{{"/css/style-desktop.css" | prepend: site.baseurl }}"/>
+			<link rel="stylesheet" href="{{"/css/style-noscript.css" | prepend: site.baseurl }}"/>
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{"/css/ie8.css" | prepend: site.baseurl }}"/><![endif]-->
+  
+  <!-- Jekyll CSS -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+	</head>
+	<body class="left-sidebar">
+
+		<!-- Header -->
+			<div id="header">
+
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="#" id="logo">Digital Alchemy</a></h1>
+						</header>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="{{"/index.html" | prepend: site.baseurl }}" >Home</a></li>
+							<li><a href="{{"/about" | prepend: site.baseurl }}">About</a></li>
+							<li><a href="{{"/jekyll/update/2014/06/15/Welcome" | prepend: sitebaseurl }}">Blog</a></li>
+                            </ul>
+					</nav>
+
+			</div>
+			
+		<!-- Main -->
+			<div class="wrapper style1">
+
+				<div class="container">
+					<div class="row">
+						<div class="4u" id="sidebar">
+							
+							<section>
+                
+								<header>
+									<h3>Recent Posts</h3>
+								</header>
+								<p>
+									Find the 10 most recent blog posts here. 
+								</p>
+                
+                {% for post in site.posts limit:10 %}
+								<div class="row half no-collapse">
+									<div class="4u">
+										<a href="{{ post.url | prepend: site.baseurl }}" class="image full"><img src="{{post.imageurl}}" style="max-height:100px" alt="" /></a>
+									</div>
+									<div class="8u">
+                    <a href="{{ post.url | prepend: site.baseurl }}"><h4>{{ post.title }}</h4></a>
+										<p>
+											{{ post.date | date: "%b %-d, %Y" }}
+										</p>
+									</div>
+								</div>
+                 {% endfor %}
+								
+								<footer>
+									<a href="#" class="button">Archive</a>
+								</footer>
+							</section>
+						</div>
+						<div class="8u skel-cell-important" id="content">
+							<article id="main">
+								<header>
+									<h2>{{ page.title }}</h2>
+									
+					
+    <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+                </header>
+  <p>
+  {{ content }}
+  <p>
+                
+                  
+									
+									
+								</section>
+							</article>
+						</div>
+					</div>
+					
+				</div>
+
+			</div>
+
+		
