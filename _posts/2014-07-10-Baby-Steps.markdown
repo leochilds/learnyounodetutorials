@@ -7,8 +7,7 @@ imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
 # Baby Steps!
 
-# Abstract
-A walkthrough for the second exercise Baby Steps from the learnyounode program
+A walkthrough for the second exercise Baby Steps from the learnyounode program by Founders and Coders team digital alchemy. 
 
 # Task
 Write a program that accepts one or more numbers as command-line arguments and prints the sum of those numbers to the console (stdout).

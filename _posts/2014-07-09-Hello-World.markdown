@@ -7,7 +7,6 @@ imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
 # Hello World!
 
-# Abstract
 An introduction to Founders and Coders and team Digital Alchemy. A brief walkthrough for the learnyounode program for learning node.js. A walkthrough for the first exercise HELLO WORLD
 
 # Task
