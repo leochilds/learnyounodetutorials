@@ -7,7 +7,7 @@ imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
 # Baby Steps!
 
-A walkthrough for the second exercise Baby Steps from the learnyounode program by Founders and Coders team digital alchemy. 
+A walkthrough for the second exercise Baby Steps from the learnyounode program by Founders and Coders team Digital Alchemy. 
 
 # Task
 Write a program that accepts one or more numbers as command-line arguments and prints the sum of those numbers to the console (stdout).
@@ -23,7 +23,7 @@ Write a program that accepts one or more numbers as command-line arguments and p
 # Script
 Hi there and welcome back to Founders and Coders team Digital Alchemys learnyounode tutorials. We will be going through the second exercise Baby Steps. True to the name there will be a lot of hand holding so this may not be for advanced programmers. 
 
-So lets being by running learnyounode:
+So lets begin by running learnyounode:
 
     $ learnyounode
 
@@ -32,9 +32,9 @@ And lets go down to Baby Steps and jump in.
 # Task Walkthrough
 So, lets take a look at the task. The task is to write a program that accepts one or more numbers as command-line arguments and prints the sum of those numbers to the console. 
 
-So lets consider what we need for this task. Need need a result to print out to the command line. We get this result by adding arguments from the command line so we need to be able to access these somehow, and we need to ensure the program can handle any amount of arguments in the command line. So just adding the 2 arguments won't work if we put in 3 nummbers.
+So lets consider what we need for this task. We need a result to print out to the command line. We get this result by adding arguments from the command line so we need to be able to access these somehow, and we need to ensure the program can handle any amount of arguments in the command line. So just adding 2 arguments won't work if we put in 3 nummbers.
 
-Lets scroll back and start with the variable function:
+Lets go back and start with the variable function:
 
     var result = 0
     
@@ -42,7 +42,11 @@ Here we are declaring a global variable. More about global variables in another 
 
     process.argv
     
-This is an array representing each thing in the command-line. e.g. ['node', 'babysteps.js', '...']. An array is basicly a list of items, seperated by commas inside square brackets. So if I typed $ node mynode.js 1 2 3 4 process.argv would represent this as ['node', 'mynode.js', '1', '2', '3', '4']. We can access specific parts of an array using square brackets at the end. For example process.argv[1] would give me the string 'mynode.js'. Why does 1 not deliver 'node'? Because the first term is represented by the number 0.    
+This is an array representing each thing in the command-line. e.g. ['node', 'babysteps.js', '...']. An array is basicly a list of items, seperated by commas inside square brackets. So if I typed: 
+
+    $ node mynode.js 1 2 3 4 
+
+process.argv would represent this as ['node', 'mynode.js', '1', '2', '3', '4']. We can access specific parts of an array using square brackets at the end. For example process.argv[1] would give me the string 'mynode.js'. Why does 1 not deliver 'node'? Because the first term is represented by the number 0.    
 
 So now what we want to do is take the number arguments from our process.argv and add them to the result variables value. We know we can specify that we want the arguments starting from process.argv[2] until the array ends. But how do we know when it ends? With the .length function of course:
 
