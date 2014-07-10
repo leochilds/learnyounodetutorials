@@ -44,7 +44,7 @@ This is the function node uses to run your script. As you can see the console no
 
     $ learnyounode verify mynode.js
 
-What you see here should be idiot proof. If it doesn’t make sense, and you are certain you’re not an idiot, please feel free to direct all complaints to any brick wall in your neighbourhood. Walkthrough through the format we can see there result of running our code, the expected result if our code should work, whether we passed or failed and if we did pass we are shown the official solution to the exercise.     
+What you see here should be idiot proof. If it doesn’t make sense, and you are certain you’re not an idiot, please feel free to direct all complaints to any brick wall in your neighbourhood. Looking at the format we can see the result of running our code, the expected result if our code should work, whether we passed or failed and if we did pass we are shown the official solution to the exercise.     
 
 So just a quick summary of todays learning. $ learnyounode runs the learnyounode program, console.log(“”) prints out a string to the console. $ node mynode.js runs the program mynode.js and $ learnyounode verify mynode.js verifies the program works using learnyounode own files and parameters.    
 
