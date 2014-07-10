@@ -5,7 +5,7 @@ date: 2014-07-10 13:15:00
 categories: learnyounode tutorials
 imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
-# Hello World!
+# Baby Steps!
 
 # Abstract
 A walkthrough for the second exercise Baby Steps from the learnyounode program
