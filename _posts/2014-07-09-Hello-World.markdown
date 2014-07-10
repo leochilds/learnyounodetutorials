@@ -7,23 +7,19 @@ imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
 # Hello World!
 
-## Abstract
-
+# Abstract
 An introduction to Founders and Coders and team Digital Alchemy. A brief walkthrough for the learnyounode program for learning node.js. A walkthrough for the first exercise HELLO WORLD
 
-## Task
-
+# Task
 Write a program that prints the text "HELLO WORLD" to the console (stdout).
 
-## New Terms
+# New Terms
+    $ learnyounode
+    $ node program.js
+    console.log(“text”)
+    $ learnyounode verify program.js
 
-$ learnyounode
-$ node program.js
-console.log(“text”)
-$ learnyounode verify program.js
-
-## Script
-
+# Script
 Welcome to Founders and Coders team Digital Alchemy’s learnyounode walkthrough. This series of video tutorials will take you step by step through each learnyounode exercise, explaining each term in detail. There will be a lot of hand holding so this video may not be for advanced programmers.    
 
 I’m using Nitrous.io for my development environment and I have already cloned the learnyounode files from its github repository into my box.    
@@ -34,8 +30,7 @@ The first term we will type into the console on the command-line is:
 
 This runs the learnyounode program. As you can see on screen there are 13 exercises to be completed. We’ll jump straight into Hello World. What comes up now in the console is the task at hand, a series of hints and then some learnyounode functions that you can run.     
 
-## Task Walkthrough
-
+# Task Walkthrough
 Fortunately this is a simple enough task. In the hints section we are even told pretty much what we need to put in our file. 
 So, I’ve made a file called mynode.js and I am going to type into the first line:
 
