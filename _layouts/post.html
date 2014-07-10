@@ -103,6 +103,10 @@ layout: none
 									
 					
     <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+                  <video style="max-width:720px;max-height:480px;" controls>
+  <source src="{{ post.videourl }}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
                 </header>
   <p>
   {{ content }}
