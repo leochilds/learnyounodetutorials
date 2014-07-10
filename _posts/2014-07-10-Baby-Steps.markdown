@@ -2,6 +2,7 @@
 layout: post
 title: "Learnyounode - Baby Steps"
 date: 2014-07-10 13:15:00
+videourl: #
 categories: learnyounode tutorials
 imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
