@@ -103,8 +103,8 @@ layout: none
 									
 					
     <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-                  <video style="width:100%;max-height:480px;" controls>
-  <source src="http://tutorials.dacamden.co.uk/videos/helloworld.mp4" type="video/mp4">
+                  <video style="width:100%;" controls>
+  <source src="{{ page.videourl }}" type="video/mp4">
 Your browser does not support the video tag.
 </video>
                 </header>
