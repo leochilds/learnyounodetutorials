@@ -19,7 +19,7 @@ Write a program that prints the text "HELLO WORLD" to the console (stdout).
     $ learnyounode verify program.js
 
 # Script
-Welcome to Founders and Coders team Digital Alchemy’s learnyounode walkthrough. This series of video tutorials will take you step by step through each learnyounode exercise, explaining each term in detail. There will be a lot of hand holding so this video may not be for advanced programmers.    
+Welcome to Founders and Coders team Digital Alchemy’s learnyounode walkthrough. This series of tutorials will take you step by step through each learnyounode exercise, explaining each term in detail. There will be a lot of hand holding so this tutorial may not be for advanced programmers.    
 
 I’m using Nitrous.io for my development environment and I have already cloned the learnyounode files from its github repository into my box.    
 
