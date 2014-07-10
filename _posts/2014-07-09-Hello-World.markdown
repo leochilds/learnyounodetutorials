@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Learnyounode - Hello World!"
-date: 2014-07-10 13:15:00
+date: 2014-07-09 13:15:00
 categories: learnyounode tutorials
 imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
