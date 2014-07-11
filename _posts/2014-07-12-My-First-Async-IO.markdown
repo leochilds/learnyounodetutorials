@@ -1,17 +1,17 @@
----
+ ---
 layout: post
-title: "Learnyounode - My First I/O"
-date: 2014-07-11 12:00:00
+title: "Learnyounode - My First Async I/O"
+date: 2014-07-12 15:00:00
 videourl: #
 categories: learnyounode tutorials
 imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
-# My First I/O!
+# My First Async I/O!
 
-A walkthrough for the third exercise My First I/O from the learnyounode program by Founders and Coders team Digital Alchemy. 
+A walkthrough for the fourth exercise My First Async I/O from the learnyounode program by Founders and Coders team Digital Alchemy. 
 
 # Task
-Write a program that uses a single **synchronous** filesystem operation to read a file and print the number of newlines it contains to the console (stdout), similar to running `cat file | wc -l`.
+Write a program that uses a single **asynchronous** filesystem operation to read a file and print the number of newlines it contains to the console (stdout), similar to running `cat file | wc -l`.
 
 The full path to the file to read will be provided as the first command-line argument.
 
@@ -34,7 +34,7 @@ And lets go down to My First I/O and jump in.
 # Task Walkthrough
 So, lets take a look at the task. Write a program that uses a single synchronous filesystem operation to read a file and print the number of newlines it contains to the console.
 
-Before we dive in, lets understand the word synchronous. Anyone who has done some background reading on node.js knows that the beauty of node is the ability to run asynchronous functions. So why are we making a program that doesn't take advantage of this? Just to make a point, thats why!
+Before we dive in, lets look at the word synchronous. Anyone who has done some background reading on node.js knows that the beauty of node is the ability to run asynchronous functions. So why are we making a program that doesn't take advantage of this? Just to make a point, thats why!
 
 So what do we need? We need to be able to access the command-line input, great we know how to do that. We need to be able to access the contents of a file. We need to be able to search the file for how many newlines it has. 
 
