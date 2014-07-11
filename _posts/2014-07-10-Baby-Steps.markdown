@@ -118,6 +118,6 @@ We can also now verify using:
     
 And you have passed! 
 
-So just a quick summary of todays learning. var delcares a variable and we assign it a value. for loops run code based on specified conditions. process.argv returns an array of the items inputted into the command-line. process.argv[] returns the item in the position specified between the square brackets. .length gives us the number of items in the array. ++ adds 1 to a variable += adds a specified value to a variable and reassigns it. Number() returns the number value of its contents.
+So just a quick summary of todays learning. **var** delcares a variable and we assign it a value. **for** loops run code based on specified conditions. **process.argv** returns an array of the items inputted into the command-line. **process.argv[]** returns the item in the position specified between the square brackets. **.length** gives us the number of items in the array. **++** adds 1 to a variable **+=** adds a specified value to a variable and reassigns it. **Number()** returns the number value of its contents.
 
 Thats all for this tutorial, I hope you will join us in the next exercise, My First I/O!
