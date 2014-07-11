@@ -6,7 +6,7 @@ videourl: #
 categories: learnyounode tutorials
 imageurl: https://pbs.twimg.com/profile_images/1437021459/nodejs-dark.png
 ---
-# Baby Steps!
+# Baby Steps! draft
 
 A walkthrough for the second exercise Baby Steps from the learnyounode program by Founders and Coders team Digital Alchemy. 
 
