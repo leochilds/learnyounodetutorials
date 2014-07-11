@@ -80,6 +80,6 @@ And you can verify to pass:
     
 And you have passed! Looking at the data in the solution there is a method of avoiding using your .toString() function. Have a read through if you fancy.
 
-So just a quick summary of todays learning. require lets the computer know you need a specific module for your code to work. readFileSync reads and returns the contents of a file in a synchronous manner. .toString() converts the subject of the brackets into a string. .split() will convert the subject into an array based on its own parameters. \n represents a newline and can be used as parameter for .split(). 
+So just a quick summary of todays learning. **require** lets the computer know you need a specific module for your code to work. **readFileSync** reads and returns the contents of a file in a synchronous manner. **.toString()** converts the subject of the brackets into a string. **.split()** will convert the subject into an array based on its own parameters. **\n ** represents a newline and can be used as parameter for .split(). 
 
 Thats all for this tutorial, I hope you will join us in the next exercise, My First Async I/O!
