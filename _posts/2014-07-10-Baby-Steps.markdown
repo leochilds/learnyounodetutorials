@@ -74,11 +74,11 @@ I've now added my statement to ensure the loop closes. **i++** will add 1 to the
     
 The computer goes through my code. Firstly, **i** has the value 2. Thanks. Is **i** less than the length of the input? The input length is 6 so yes. Add the value of 1 to the currently assigned value of **i**. **i** now has the value 3. Execute code block. Is **i** less than the process length? The input is 6 so yes. Add the value of 1 to the currently assigned value of **i**. **i** now has the value 4. ...etc
 
-Eventually, the value of i will reach 6, so the code will run 4 times, once for each argument. Then the code will stop. Great, except we still haven't told the computer what to do if the condition is true. We want to add each number argument to the result variable. So how can we select the numbers from the console. By using process.argv[]. So for the first execution we want to take the first number which is the 3 item in the array. By using the square brackets that would be position 2 (starts at 0 remember). So:
+Eventually, the value of **i** will reach 6, so the code will run 4 times, once for each argument. Then the code will stop. Great, except we still haven't told the computer what to do if the condition is true. We want to add each number argument to the result variable. So how can we select the numbers from the console? By using process.argv[]. So for the first execution we want to take the first number which is the 3rd item in the array. By using the square brackets that would be position 2 (starts at 0 remember). So:
 
     process.argv[2]
     
-But then what about the other numbers? Well why don't we use i? i starts at the value 2 and increases everytime the code is run, so the code will sequentially run through each argument starting from position 2 until there are none left!
+But then what about the other numbers? Well, why don't we use **i**? **i** starts at the value 2 and increases everytime the code is run, so the code will sequentially run through each argument starting from position 2 until there are none left!
 
     process.argv[i]
     
@@ -86,7 +86,7 @@ Yay! We can now select each number. But there is still no instruction! Lets add 
 
     result += process.argv[i]
     
-Using += we are first adding the two values and then we are assigning the new value to our result variable. Awesome, we are now adding the string in position i of our input to the result variable. Wait, the string? We don't want that, we want a number value. So we can use the Number() function. This function returns the number value of its contents. For example:
+Using **+=** we are first adding the two values and then we are assigning the new value to our result variable. Awesome, we are now adding the string in position **i** of our input to the result variable. Wait, the string? We don't want that, we want a number value. So we can use the Number() function. This function returns the number value of its contents. For example:
 
     Number(true);
     Number(12);
@@ -105,9 +105,9 @@ So altogether now:
       
     console.log(result)
     
-First we declare the variable result and give it a value 0. Next we start a for loop, declaring the variable i to start with the value 2, stating to only run the code if the length of the input is greater than our i variable. If the condition is true, add the Number value of the argument in position i to the result variable and then increase the value of i by one. The for loop will then run again until the variable i has the same value as the length of the input. 
+First we declare the variable result and give it a value 0. Next we start a **for** loop, declaring the variable **i** to start with the value 2, stating to only run the code if the length of the input is greater than our **i** variable. If the condition is true, add the **Number** value of the argument in position **i** to the result variable and then increase the value of **i** by one. The for loop will then run again until the variable **i** has the same value as the length of the input. 
 
-When our for loop has stopped we use our trusty, console.log() to print the value of the result variable into the console. The content of the console.log() function is not a string in this case, it is a variable which can be a string (or anything else for that matter). Save and run:
+When our **for** loop has stopped we use our trusty, **console.log()** to print the value of the result variable into the console. The content of the **console.log()** function is not a string in this case, it is a variable which can be a string (or anything else for that matter). Save and run:
 
     $ node mynode.js 5 6 3 7
     result==>21
