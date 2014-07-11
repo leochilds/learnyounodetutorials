@@ -36,7 +36,7 @@ So, I’ve made a file called mynode.js and I am going to type into the first li
 
     console.log(“HELLO WORLD”)
 
-This really is very basic javascript, but I will still go through the line to ensure there is no confusion. Console.log() prints the contents of the brackets into the console. By print I mean it just types it out for us in the console, you don’t need a printer! Inside the brackets is what we call a string. A string is just raw data inside speech marks. Strings can be numbers, items, letters… whatever you like. In this case our string is HELLO WORLD. So now I save the and I can run it in the console on the command line using:
+This really is very basic javascript, but I will still go through the line to ensure there is no confusion. Console.log() prints the contents of the brackets into the console. By print I mean it just types it out for us in the console, you don’t need a printer! Inside the brackets is what we call a string. A string is just raw data inside speech marks. Strings can be numbers, items, letters… whatever you like. In this case our string is HELLO WORLD. So now I save the file and I can run it in the console on the command line using:
 
     $ node mynode.js
 
