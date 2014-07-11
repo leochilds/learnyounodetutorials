@@ -34,7 +34,7 @@ And lets go down to My First I/O and jump in.
 # Task Walkthrough
 So, lets take a look at the task. Write a program that uses a single synchronous filesystem operation to read a file and print the number of newlines it contains to the console.
 
-Before we dive in, lets understand the word synchronous. Anyone who has done some background reading on node.js knows that the beauty of node is the ability to run asynchronous functions. So why are we making a program that doesn't take advantage of this? Just to make a point, thats why!
+Before we dive in, lets look at the word synchronous. Anyone who has done some background reading on node.js knows that the beauty of node is the ability to run asynchronous functions. So why are we making a program that doesn't take advantage of this? Just to make a point, thats why!
 
 So what do we need? We need to be able to access the command-line input, great we know how to do that. We need to be able to access the contents of a file. We need to be able to search the file for how many newlines it has. 
 
