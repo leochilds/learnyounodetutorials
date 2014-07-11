@@ -43,7 +43,7 @@ Here we are declaring a global variable. More about global variables in another 
 
     process.argv
     
-This is an array representing each thing in the command-line. e.g. ['node', 'babysteps.js', '...']. An array is basicly a list of items, seperated by commas inside square brackets. So if I typed: 
+This is an array representing each thing in the command-line. e.g. ['node', 'babysteps.js', '...']. An array is basically a list of items, seperated by commas inside square brackets. So if I typed: 
 
     $ node mynode.js 1 2 3 4 
 
