@@ -31,4 +31,4 @@ And lets go down to My First Async I/O and jump in.
 
 **insert tutorial here**
 
-Thats all for this tutorial, I hope you will join us in the next exercise, My First Async I/O!
+Thats all for this tutorial, I hope you will join us in the next exercise, Filtered Is!
