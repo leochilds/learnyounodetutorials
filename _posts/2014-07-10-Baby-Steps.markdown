@@ -43,11 +43,11 @@ Here we are declaring a global variable. More about global variables in another 
 
     process.argv
     
-This is an array representing each thing in the command-line. e.g. ['node', 'babysteps.js', '...']. An array is basically a list of items, seperated by commas inside square brackets. So if I typed: 
+This is an array representing each thing in the command-line. e.g. **['node', 'babysteps.js', '...']**. An array is basically a list of items, seperated by commas inside square brackets. So if I typed: 
 
     $ node mynode.js 1 2 3 4 
 
-process.argv would represent this as ['node', 'mynode.js', '1', '2', '3', '4']. We can access specific parts of an array using square brackets at the end. For example process.argv[1] would give me the string 'mynode.js'. Why does 1 not deliver 'node'? Because the first term is represented by the number 0.    
+process.argv would represent this as **['node', 'mynode.js', '1', '2', '3', '4']**. We can access specific parts of an array using square brackets at the end. For example **process.argv[1]** would give me the string **'mynode.js'**. Why does 1 not deliver **'node'**? Because the first term is represented by the number 0.    
 
 So now what we want to do is take the number arguments from our process.argv and add them to the result variables value. We know we can specify that we want the arguments starting from process.argv[2] until the array ends. But how do we know when it ends? With the .length function of course:
 
@@ -63,16 +63,16 @@ The for function takes 3 parameters, and based on that carries out the code that
     for (var i = 2; i < process.argv.length; statement3)
       code to be executed
       
-In the first statement I have made the variable i and given it the value of 2. I'll explain more later. Next I have declared that for this code to run the value of i must be smaller than the length of our input in the command line. Lets think about this a bit more. If I input $ node mynode.js into the command line, there will be no arguments. So the length will be 2. By starting my i value at 2 I am telling the computer not to run my code as there are no arguments. If I enter one of more arguments, the length of my input will be greater than 2 and my process will run. But how do I stop it? 
+In the first statement I have made the variable **i** and given it the value of 2. I'll explain more later. Next I have declared that for this code to run the value of **i** must be smaller than the length of our input in the command line. Lets think about this a bit more. If I input **$ node mynode.js** into the command line, there will be no arguments. So the length will be 2. By starting my **i** value at 2 I am telling the computer not to run my code as there are no more arguments. If I enter one or more arguments, the length of my input will be greater than 2 and my process will run. But how do I stop it? 
 
     for (var i = 2; i < process.argv.length; i++)
       code to be executed
       
-I've now added my statement to ensure the loop closes. i++ will add 1 to the value of i everytime the code is executed. Lets use an example to demonstrate. I run:
+I've now added my statement to ensure the loop closes. **i++** will add 1 to the value of **i** everytime the code is executed. Lets use an example to demonstrate. I run:
 
     $ node mynode.js 1 2 3 4
     
-The computer goes through my code. Firstly, i has the value 2. Thanks. Is i less than the length of the input? The input length is 6 so yes. Add the value of 1 to the currently assigned value of i. i now has the value 3. Execute code block. Is i less than the process length? The input is 6 so yes. Add the value of 1 to the currently assigned value of i. i now has the value 3. ...etc
+The computer goes through my code. Firstly, **i** has the value 2. Thanks. Is **i** less than the length of the input? The input length is 6 so yes. Add the value of 1 to the currently assigned value of **i**. **i** now has the value 3. Execute code block. Is **i** less than the process length? The input is 6 so yes. Add the value of 1 to the currently assigned value of **i**. **i** now has the value 4. ...etc
 
 Eventually, the value of i will reach 6, so the code will run 4 times, once for each argument. Then the code will stop. Great, except we still haven't told the computer what to do if the condition is true. We want to add each number argument to the result variable. So how can we select the numbers from the console. By using process.argv[]. So for the first execution we want to take the first number which is the 3 item in the array. By using the square brackets that would be position 2 (starts at 0 remember). So:
 
