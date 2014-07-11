@@ -54,7 +54,7 @@ This function will now check the contents of the file and return it as a buffer 
 
     var contents = fs.readFileSync(process.argv[2])
     
-Now we need to read the file for how many newlines it has. This can be a bit complicated. Lets think about some of the functions we've used in previous exercises. One that comes to mind is .length. If you recall, this tells us the number of items in an array. What if we made a new item in our array for each newline? To do that we need to make the entire array a string and then split it backup into an array based on the newlines. So...
+Now we need to read the file for how many newlines it has. This can be a bit complicated. Lets think about some of the functions we've used in previous exercises. One that comes to mind is .length. If you recall, this tells us the number of items in an array. What if we made a new item in our array for each newline? To do that we need to make the entire array a string and then split it back up into an array based on the newlines. So...
 
     contents.toString().split('\n')
     
