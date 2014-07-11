@@ -33,87 +33,99 @@ And lets go down to Baby Steps and jump in.
 # Task Walkthrough
 So, lets take a look at the task. The task is to write a program that accepts one or more numbers as command-line arguments and prints the sum of those numbers to the console. 
 
-So lets consider what we need for this task. We need a result to print out to the command line. We get this result by adding arguments from the command line so we need to be able to access these somehow, and we need to ensure the program can handle any amount of arguments in the command line. So just adding 2 arguments won't work if we put in 3 nummbers.
+We need to be able to access comand-line arguments input by us. We need to add only the number arguments that precede our program name. We need to be able to add as many numbers as are entered. So lets consider how to access the command-line from our script. If you checkout the hints there is mention of the function **process.argv**. This returns the items in the command line back as an array. So I'll demonstrate with mynode.js file. Entering:
 
-Lets go back and start with the variable function:
-
-    var result = 0
+    console.log(process.argv)
     
-Here we are declaring a global variable. More about global variables in another exercise. The variable is being called result, and the value it has been assigned for now is 0. Why? Because if no numbers are run with the program, the result should be 0. Its a starting point. Next lets have a look at how we can access the command line. If you check the hints in learnyounode there is mention of:
+Save and run:
 
-    process.argv
+    $ node mynode.js
     
-This is an array representing each thing in the command-line. e.g. **['node', 'babysteps.js', '...']**. An array is basically a list of items, seperated by commas inside square brackets. So if I typed: 
+I get back in my command line:
 
-    $ node mynode.js 1 2 3 4 
-
-process.argv would represent this as **['node', 'mynode.js', '1', '2', '3', '4']**. We can access specific parts of an array using square brackets at the end. For example **process.argv[1]** would give me the string **'mynode.js'**. Why does 1 not deliver **'node'**? Because the first term is represented by the number 0.    
-
-So now what we want to do is take the number arguments from our process.argv and add them to the result variables value. We know we can specify that we want the arguments starting from process.argv[2] until the array ends. But how do we know when it ends? With the .length function of course:
-
-    process.argv.length
+    [ 'node', 'mynode.js' ]
     
-This returns the number of terms in an array as a number. So for our example above there will be 6 terms. We know know how long it is. So... we want to take the number arguments, add them to the result and stop when we have used all of the numbers. It sound like we need a for loop:
-
-    for (statement1; statement2; statement3)
-      code to be executed
-      
-The for function takes 3 parameters, and based on that carries out the code that needs to be executed. So usually, statement1 is a variable assignment, statement2 is a condition to run the code, and statement3 is some code to run on each loop to ensure it eventually stops. If your condition can always be true the program will run forever and you could crash your machine! I'm going to fill these in to what they need to be then explain further:
-
-    for (var i = 2; i < process.argv.length; statement3)
-      code to be executed
-      
-In the first statement I have made the variable **i** and given it the value of 2. I'll explain more later. Next I have declared that for this code to run the value of **i** must be smaller than the length of our input in the command line. Lets think about this a bit more. If I input **$ node mynode.js** into the command line, there will be no arguments. So the length will be 2. By starting my **i** value at 2 I am telling the computer not to run my code as there are no more arguments. If I enter one or more arguments, the length of my input will be greater than 2 and my process will run. But how do I stop it? 
-
-    for (var i = 2; i < process.argv.length; i++)
-      code to be executed
-      
-I've now added my statement to ensure the loop closes. **i++** will add 1 to the value of **i** everytime the code is executed. Lets use an example to demonstrate. I run:
+I actually get back [ 'node', '/home/action/learnyounode/mynode.js' ]  which shows the full directory. But thats not important for now. Demonstrating with numbers:
 
     $ node mynode.js 1 2 3 4
     
-The computer goes through my code. Firstly, **i** has the value 2. Thanks. Is **i** less than the length of the input? The input length is 6 so yes. Add the value of 1 to the currently assigned value of **i**. **i** now has the value 3. Execute code block. Is **i** less than the process length? The input is 6 so yes. Add the value of 1 to the currently assigned value of **i**. **i** now has the value 4. ...etc
+I get back:
 
-Eventually, the value of **i** will reach 6, so the code will run 4 times, once for each argument. Then the code will stop. Great, except we still haven't told the computer what to do if the condition is true. We want to add each number argument to the result variable. So how can we select the numbers from the console? By using process.argv[]. So for the first execution we want to take the first number which is the 3rd item in the array. By using the square brackets that would be position 2 (starts at 0 remember). So:
+    [ 'node', 'mynode.js', '1', '2', '3', '4' ]
+    
+Now we need to be able to access specific parts of this array. We have no interest in using the 1st or 2nd item, so only items preceeding this will be useful to us. Items in an array can be access by passing a parameter through the function. For example in our previous example I could type:
 
     process.argv[2]
     
-But then what about the other numbers? Well, why don't we use **i**? **i** starts at the value 2 and increases everytime the code is run, so the code will sequentially run through each argument starting from position 2 until there are none left!
+This would return the string '1'. Now you probably have noticed that '1' is in the third position in the array. That's because the first value is represented by 0 for many reasons that we don't need to cover in this exercise. Put simply, it make many processes easier to run. Problem is we want to be able to work with all the numbers in the array at some point. So we really should make a variable. What's a variable I hear you ask? Well its a value that can vary depending on what value we assign it. Lets use i. Why i? Because the official solution uses i... that is my only reason.
 
-    process.argv[i]
+    var i = 2
     
-Yay! We can now select each number. But there is still no instruction! Lets add the number to our result variable.
-
-    result += process.argv[i]
-    
-Using **+=** we are first adding the two values and then we are assigning the new value to our result variable. Awesome, we are now adding the string in position **i** of our input to the result variable. Wait, the string? We don't want that, we want a number value. So we can use the Number() function. This function returns the number value of its contents. For example:
-
-    Number(true);
-    Number(12);
-    
-Would produce:
-
-    1
-    12
-    
-So altogether now:
+So this var function declares the variable i exists and then the = function assigns the variable i with a value. In this case it is the value 2. This can be a number, a string, even a function. Javascript is very open about this. How kind. Why 2? Because we have just established that teh first number we are interested in can be access with the parameter 2 in the process.argv function. So we have access to the command-line. We have access to specific parts of the command-line, and we have a variable representing each position. Kind of. Its almost time to introduce the for loop. Loops are handy, if you want to run the same code over and over again, each time with a different value. That sounds like something we want to do. We would like to add each number in turn to get a result. So before we make a for loop, lets make a result.
 
     var result = 0
+
+So, assuming no numbers are entered, we have a result of 0. Someone to start. Now the for loop. So here is the syntax of the for loop:
+
+    for (statement1, statement2, statement3) {
+      code to be executed
+    }
+
+Let me explain. Statement1 is the first bit of code considered. It is usually a variable. Statement2 is the condition on which we should run the code, which would probably reference the variable in statement1. Statement3 is code to run after the code to be executed has indeed been executed. So statement3 only runs if the condition is true and it runs after the code block. Very useful stuff. I'm going to go ahead and fill in statement1 and 2:
+
+    for (var i = 2, i < process.argv.length, statement3) {
+      code to be executed
+    }
     
-    for (var i = 2; i < process.argv.length; i++) {
+"What is that!?!?!" You scream. Maybe that's a tad bit dramatic, but you probably are wondering what the .length is is our code. .length is a fancy function that returns the length of its subject. In the case of an array, this is the amount of items in the array. So in our previous example there were 6 items in our array. Let me show you:
+
+    console.log(process.argv.length)
+    
+Save and run:
+
+    $ node mynode.js 1 2 3 4
+    
+Returns:
+
+    6
+    
+See, isn't that scary is it? So lets go back to our for loop and consider what I've done here. First is our variable i, which starts at value 2. As we know, this is our way of making sure we can ignore the first 2 items in our array. Next is the condition, the value of i must be less than the length of the array. So what does this mean? Well, apply some mathematical logic and you should realise that this means the code can only run if we have number arguments. If there is 1 number argument, the length of the array will be 3, which is greater than our i value of 2. If there are no number arguments, the length is 2 and this isn't greater than i so its a no go. This is still incomplete. We want to run our code block on each value sequentially. Furthermore, we want some code to run. Lets write some code to run:
+
+    for (var i = 2, i < process.argv.length, statement3) {
+      result += process.argv[i]
+    }
+    
+Lets look at +=. This means add the value of the result to the value of process.argv[i] and then reassign the value to result. So effectively, increase result by the number in positon i. That's all well and good except, the number at position i is not a number. It's a string. I promise, it really is. So we need to turn it into number that we can do math with. Lets use the Number() function.
+
+    for (var i = 2, i < process.argv.length, statement3) {
       result += Number(process.argv[i])
-      }
-      
+    }
+
+This returns the number value of its argument. So if the argument is '3' then it will return the number 3. If the argument is true then it will return the number 1. You get the picture. So at the moment our for loop checks if i is less than our process.argv length, then if it is, our for loop adds the number in the i position to our result variable. Right now that means it's only going to add the first number because i is still 2 and nothing has changed that. Bring on statement3:
+
+    for (var i = 2, i < process.argv.length, i++) {
+      result += Number(process.argv[i])
+    }
+    
+i++ will add 1 to the value of i. This has two effects. Firstly, it allows us to cycle through each argument. After every code execution i increases in value and the subject returned by process.argv[i] changes to the next item in the array. So our loop cycles through each item, adding it to the result variable. The i++ also gives our loop a closing point. Eventually i will reach the same value as the length of the process.argv array, which is entirely deliberate. That way, the condition in statement 2 will no longer be true at the same time that we have ran out of number arguments. Not closing loops can be dangerous, leading to computer crashes in the worst of cases. So lets put all our code together and have a look:
+
+    var result = 0;
+    
+    for (var i = 2, i < process.argv.length, i++) {
+      result += Number(process.argv[i])
+    }
+    
     console.log(result)
-    
-First we declare the variable result and give it a value 0. Next we start a **for** loop, declaring the variable **i** to start with the value 2, stating to only run the code if the length of the input is greater than our **i** variable. If the condition is true, add the **Number** value of the argument in position **i** to the result variable and then increase the value of **i** by one. The for loop will then run again until the variable **i** has the same value as the length of the input. 
 
-When our **for** loop has stopped we use our trusty, **console.log()** to print the value of the result variable into the console. The content of the **console.log()** function is not a string in this case, it is a variable which can be a string (or anything else for that matter). Save and run:
+You can now run your program using different number arguments to convince yourself it works.
 
-    $ node mynode.js 5 6 3 7
-    result==>21
+    $ node mynode.js 4 7 2 8
     
-We can also now verify using:
+Returns:
+
+    21
+    
+You can truly convince yourself by running the verify program:
 
     $ learnyounode verify mynode.js
     
